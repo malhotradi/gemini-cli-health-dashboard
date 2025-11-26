@@ -20,35 +20,58 @@ Update your Gemini CLI settings file (typically ~/.gemini/settings.json) to enab
 ### 2. 📊 Create Log-Based Metrics
 You must create **3** user-defined metrics in Google Cloud Logging using either option [A](#a-setup-metrics-from-google-cloud-console) or [B](#b-setup-metrics-using-bash-script-automated) .
 
-⚠️ **Important:** The metric names must match exactly as listed below, or the dashboard widgets will show "No Data."
+⚠️ **Important:** The metric names must match exactly as listed below, or the dashboard widgets will show "No Data." Also replace project_id variable with your respective google cloud project ID.
+
 #### [A] Setup metrics from Google Cloud Console
 
  * ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🟢 Metric A: Success Rate
    - Metric Type: Counter
    - Log Metric Name: gemini_cli_success
+   - Labels:
+     ```text
+     Name : success_status
+     Type : STRING
+     Field Name : jsonPayload."event.name"
+     ```
    - Filter:
-```text
-resource.type="global"
-jsonPayload.event.name="gemini_cli.api_response"
-jsonPayload.status_code >= 200 AND jsonPayload.status_code < 300
-```
+      ```text
+      logName="projects/<project_id>/logs/gemini_cli"
+      jsonPayload.status_code:*
+      jsonPayload."event.name"="gemini_cli.api_response"
+      ```
  * ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔴 Metric B: Error Rate
    - Metric Type: Counter
    - Log Metric Name: gemini_cli_error
+   - Labels:
+     ```text
+     Name : error_status
+     Type : STRING
+     Field Name : jsonPayload."event.name"
+     ```
    - Filter:
-```text
-resource.type="global"
-jsonPayload.event.name="gemini_cli.api_error"
-```
+     ```text
+     logName="projects/<project_id>/logs/gemini_cli"
+     jsonPayload.status_code:*
+     jsonPayload."event.name"="gemini_cli.api_error"
+     ```
  * ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📈 Metric C: Response Distribution
    - Metric Type: Counter
    - Log Metric Name: gemini_cli_response
-   - Labels: Create a label named status mapped to field jsonPayload.status_code.
+   - Labels: Create 2 labels
+     ```text
+     Name : status
+     Type : STRING
+     Field Name : jsonPayload.status_code
+
+     Name : event_name
+     Type : STRING
+     Field Name : jsonPayload."event.name"
+     ```
    - Filter:
-```text
-resource.type="global"
-logName="projects/YOUR_PROJECT/logs/gemini_cli"
-```
+     ```text
+     logName="projects/<project_id>/logs/gemini_cli"
+     jsonPayload.status_code:*
+     ```
 
 #### [B] Setup metrics using bash script (Automated)
 Instead of manually creating metrics, you can also run the provided script:
