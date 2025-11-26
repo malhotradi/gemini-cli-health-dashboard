@@ -86,10 +86,10 @@ Instead of manually creating metrics, you can also run the provided script:
 ## 📥 Installation
 1. Download the [gemini-cli-dashboard.json](/dashboard/gemini-cli-health-dashboard.json) file from this repository.
 2. Go to the Google Cloud Console > Monitoring > Dashboards.
-3. Click Create Dashboard.
-4. Switch to the JSON Editor tab.
+3. Click Create Custom Dashboard.
+4. Go to the Dashboard Settings > JSON > JSON Editor
 5. Copy and paste the contents of gemini-cli-dashboard.json.
-6. Click Apply.
+6. Click Apply Changes.
 
 ## 🖼️ Dashboard Panels
 - **[A] Success vs Error Rate:** 📊 A stacked bar chart showing the ratio of successful requests to failed ones over time.
