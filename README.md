@@ -92,8 +92,8 @@ Instead of manually creating metrics, you can also run the provided script:
 6. Click Apply.
 
 ## 🖼️ Dashboard Panels
-- [A] Success vs Error Rate: 📊 A stacked bar chart showing the ratio of successful requests to failed ones over time.
-- [B] Response Code Distribution: 📉 A line chart visualizing the volume of traffic segmented by HTTP response codes (200s, 400s, 500s).
+- **[A] Success vs Error Rate:** 📊 A stacked bar chart showing the ratio of successful requests to failed ones over time.
+- **[B] Response Code Distribution:** 📉 A line chart visualizing the volume of traffic segmented by HTTP response codes (200s, 400s, 500s).
 ![Alt Text](/images/sample_dashboard.png)
 ## 🤝 Contributing
 Feel free to submit Pull Requests to improve the dashboard layout or add new metrics!
