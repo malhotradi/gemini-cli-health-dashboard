@@ -1,6 +1,6 @@
 [
   {
-    "name": "gemini_cli_success1",
+    "name": "gemini_cli_success",
     "description": "Counter for successful Gemini CLI API responses (2xx)",
     "filter": "logName='projects/PROJECT_ID_PLACEHOLDER/logs/gemini_cli' AND jsonPayload.status_code:* AND jsonPayload.'event.name'='gemini_cli.api_response'",
     "metricDescriptor": {
@@ -19,7 +19,7 @@
     }
   },
   {
-    "name": "gemini_cli_error1",
+    "name": "gemini_cli_error",
     "description": "Counter for failed Gemini CLI API responses (4xx/5xx)",
     "filter": "logName='projects/PROJECT_ID_PLACEHOLDER/logs/gemini_cli' AND jsonPayload.status_code:* AND jsonPayload.'event.name'='gemini_cli.api_error'",
     "metricDescriptor": {
@@ -38,7 +38,7 @@
     }
   },
   {
-    "name": "gemini_cli_response1",
+    "name": "gemini_cli_response",
     "description": "Distribution of all Gemini CLI response codes",
     "filter": "logName='projects/PROJECT_ID_PLACEHOLDER/logs/gemini_cli' AND jsonPayload.status_code:*",
     "metricDescriptor": {
