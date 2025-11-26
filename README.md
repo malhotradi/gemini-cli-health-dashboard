@@ -73,15 +73,18 @@ You must create **3** user-defined metrics in Google Cloud Logging using either 
      jsonPayload.status_code:*
      ```
 
-#### [B] Setup metrics using bash script (Automated)
+#### [B] Setup metrics using python script (Automated)
 Instead of manually creating metrics, you can also run the provided script:
 
-1. Open Cloud Shell.
-2. Upload [create_log_based_metrics.sh](/scripts/create_log_based_metrics.sh).
-3. Run: `bash create_log_based_metrics.sh`
+1. Open the terminal.
+2. Authenticate using Google Cloud Credentials
+3. Setup Google Cloud Project if not already set.
+4. Clone this git repository.
+5. Navigate path 'gemini-cli-health-dashboard/scripts/'
+6. Run: `python3 create_log_based_metrics.py`
 
 ## 📥 Installation
-1. Download the gemini-cli-dashboard.json file from this repository.
+1. Download the [gemini-cli-dashboard.json](#dashboard-gemini-cli-health-dashboard-json) file from this repository.
 2. Go to the Google Cloud Console > Monitoring > Dashboards.
 3. Click Create Dashboard (or "Import Dashboard" if available).
 4. Switch to the JSON Editor tab.
