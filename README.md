@@ -24,7 +24,7 @@ You must create **3** user-defined metrics in Google Cloud Logging.
 
 #### 🟢 Metric A: Success Rate
 - Metric Type: Counter
-- Log Metric Name: gemini_cli_success_rate
+- Log Metric Name: gemini_cli_success
 - Filter:
 ```text
 resource.type="global"
@@ -34,7 +34,7 @@ jsonPayload.status_code >= 200 AND jsonPayload.status_code < 300
 
 #### 🔴 Metric B: Error Rate
 - Metric Type: Counter
-- Log Metric Name: gemini_cli_error_rate
+- Log Metric Name: gemini_cli_error
 - Filter:
 ```text
 resource.type="global"
@@ -43,7 +43,7 @@ jsonPayload.event.name="gemini_cli.api_error"
 
 #### 📈 Metric C: Response Distribution
 - Metric Type: Counter
-- Log Metric Name: test_gemini_cli
+- Log Metric Name: gemini_cli_response
 - Labels: Create a label named status mapped to field jsonPayload.status_code.
 
 Filter:
