@@ -80,7 +80,7 @@ Instead of manually creating metrics, you can also run the provided script:
 2. Authenticate using Google Cloud Credentials
 3. Setup Google Cloud Project if not already set.
 4. Clone this git repository.
-5. Navigate path 'gemini-cli-health-dashboard/scripts/'
+5. Navigate path [gemini-cli-health-dashboard/scripts/](/scripts/)
 6. Run: `python3 create_log_based_metrics.py`
 
 ## 📥 Installation
