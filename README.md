@@ -23,28 +23,28 @@ You must create **3** user-defined metrics in Google Cloud Logging using either 
 ⚠️ **Important:** The metric names must match exactly as listed below, or the dashboard widgets will show "No Data."
 #### [A] Setup metrics from Google Cloud Console
 
-##### 🟢 Metric A: Success Rate
-- Metric Type: Counter
-- Log Metric Name: gemini_cli_success
-- Filter:
+ * ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🟢 Metric A: Success Rate
+   - Metric Type: Counter
+   - Log Metric Name: gemini_cli_success
+   - Filter:
 ```text
 resource.type="global"
 jsonPayload.event.name="gemini_cli.api_response"
 jsonPayload.status_code >= 200 AND jsonPayload.status_code < 300
 ```
-##### 🔴 Metric B: Error Rate
-- Metric Type: Counter
-- Log Metric Name: gemini_cli_error
-- Filter:
+ * ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔴 Metric B: Error Rate
+   - Metric Type: Counter
+   - Log Metric Name: gemini_cli_error
+   - Filter:
 ```text
 resource.type="global"
 jsonPayload.event.name="gemini_cli.api_error"
 ```
-##### 📈 Metric C: Response Distribution
-- Metric Type: Counter
-- Log Metric Name: gemini_cli_response
-- Labels: Create a label named status mapped to field jsonPayload.status_code.
-- Filter:
+ * ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📈 Metric C: Response Distribution
+   - Metric Type: Counter
+   - Log Metric Name: gemini_cli_response
+   - Labels: Create a label named status mapped to field jsonPayload.status_code.
+   - Filter:
 ```text
 resource.type="global"
 logName="projects/YOUR_PROJECT/logs/gemini_cli"
@@ -54,7 +54,7 @@ logName="projects/YOUR_PROJECT/logs/gemini_cli"
 Instead of manually creating metrics, you can also run the provided script:
 
 1. Open Cloud Shell.
-2. Upload `/scripts/create_log_based_metrics.sh`.
+2. Upload [create_log_based_mterics.sh](/scripts/create_log_based_metrics.sh).
 3. Run: `bash create_log_based_metrics.sh`
 
 ## 📥 Installation
