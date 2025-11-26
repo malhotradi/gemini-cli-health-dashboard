@@ -84,7 +84,7 @@ Instead of manually creating metrics, you can also run the provided script:
 6. Run: `python3 create_log_based_metrics.py`
 
 ## 📥 Installation
-1. Download the [gemini-cli-dashboard.json](#dashboard-gemini-cli-health-dashboard-json) file from this repository.
+1. Download the [gemini-cli-dashboard.json](/dashboard/gemini-cli-health-dashboard.json) file from this repository.
 2. Go to the Google Cloud Console > Monitoring > Dashboards.
 3. Click Create Dashboard (or "Import Dashboard" if available).
 4. Switch to the JSON Editor tab.
