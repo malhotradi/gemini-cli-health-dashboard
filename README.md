@@ -54,7 +54,7 @@ logName="projects/YOUR_PROJECT/logs/gemini_cli"
 Instead of manually creating metrics, you can also run the provided script:
 
 1. Open Cloud Shell.
-2. Upload [create_log_based_mterics.sh](/scripts/create_log_based_metrics.sh).
+2. Upload [create_log_based_metrics.sh](/scripts/create_log_based_metrics.sh).
 3. Run: `bash create_log_based_metrics.sh`
 
 ## 📥 Installation
