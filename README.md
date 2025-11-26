@@ -18,7 +18,7 @@ Update your Gemini CLI settings file (typically ~/.gemini/settings.json) to enab
 ```
 
 ### 2. 📊 Create Log-Based Metrics
-You must create **3** user-defined metrics in Google Cloud Logging using either option [A](#a-setup-metrics-from-google-cloud-console) or [B](#b-setup-metrics-using-bash-script-automated)
+You must create **3** user-defined metrics in Google Cloud Logging using either option [A](#a-setup-metrics-from-google-cloud-console) or [B](#b-setup-metrics-using-bash-script-automated) .
 
 ⚠️ **Important:** The metric names must match exactly as listed below, or the dashboard widgets will show "No Data."
 #### [A] Setup metrics from Google Cloud Console
